@@ -1,0 +1,70 @@
+/* .grid {
+  border: 2px blue solid;
+  height: 500px;
+  width: 500px;
+  display: grid;
+  grid-template-columns: 25% 25% 2fr 1fr;
+  grid-template-rows: 200px 200px;
+  grid-row-gap: 10px;
+  grid-column-gap: 15px;
+}
+
+.box {
+  background-color: beige;
+  color: black;
+  border-radius: 5px;
+  border: 2px dodgerblue solid;
+}
+
+.a {
+  grid-column-start: 1;
+  grid-column-end: span 2;
+  grid-row-start: 1;
+  grid-row-end: 3;
+} */
+
+
+/* To turn an HTML elmement into a grid container, you must set the element's display property to one of two value:  'grid' -- for a block-level grid.
+                               'inline-grid'--for an inline grid. 
+*/
+
+
+/* Grid container */
+.grid {
+  display: grid; 
+  border: 2px blue solid;
+  width: 400px;
+  height: 500px;
+
+  /* to define the # of columns in our grid and their respective widths */
+  /* grid-template-columns: 100px 50% 200px;
+  grid-template-rows: 40% 50% 50px; */
+
+  /* refactored the two lines above with shorthand syntax */
+  /* grid-template: 40% 50% 50px / 100px 50% 200px; */
+
+  /* refactored the above code to us 'fr' for fraction */
+
+  /* grid-template: 1fr 1fr 1fr / 3fr 50% 1fr;  */
+
+
+  /* refactored to use 'repeat' function */
+  /* grid-template: repeat(3, 1fr) / 3fr 50% 1fr; */
+
+  /* using 'minmax()' to give second column a range of sizes */
+  grid-template: repeat(3, 1fr) / 3fr minmax(50px, 300px) 1fr;
+  
+  /* to put column gaps in our grid */
+  /* grid-column-gap: 10px; */
+
+  /* Shorthand syntax that sets the row gaps first, then the columns */
+  grid-gap: 20px 10px;
+
+}
+
+.box {
+  background-color: beige;
+  color: black;
+  border-radius: 5px;
+  border: 2px dodgerblue solid;
+}
